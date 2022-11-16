@@ -27,6 +27,7 @@ int parseargs(char **buf);
 
 /* from errhandl.c */
 int errhandl(int status);
+char *error_path_126(data_shell *datash);
 
 /* from string.c */
 size_t _strlen(char *str);
@@ -95,6 +96,10 @@ void exitcleanup(char **av);
 /* from _atoi*/
 int _atoi(char *s);
 char *_getpid(void);
+
+/* shell_loop.c */
+char *without_comment(char *in);
+void shell_loop(data_shell *datash);
 
 #endif
 
