@@ -1,0 +1,48 @@
+B.\"Manpage for simple shell 
+
+.\"Created by Christian Mba and Dann Nwankwo
+.TH HSH 1 "November 2022" "ALX Africa" "SHELL - Simple Shell man page"
+
+.SH NAME
+hsh\fR \- simple UNIX command interpreter
+
+.SH SYNOPSIS
+soda\fR [\fIfilename\fR]
+
+.SH COPYRIGHT
+hsh is Copyright (C) 2022 by Christian Mba and Dann Nwankwo
+
+.SH DESCRIPTION
+hsh\fR is a sh-compatible command language interpreter that executes commands read from the standard input or from a file.
+
+.SH ARGUMENTS
+If arguments remain after option processing, the first argument is assumed to be the name of a file containing shell commands. hsh reads and executes commands from this file, then exits. hsh exit status is the exit status of the last command executed in the script. If no commands are executed, the exit status is 0. An attempt is first made to open the file in the current directory, and, if no file is found, then the shell searches the directories in PATH for the script.
+
+.SH INVOCATION
+Sodash is started with the standard input connected to the terminal (as determined by \fIisatty(3)\fR), the interactive mode is executed. Also non-interactively option can be executed.
+When Sodash is executed interactively, the prompt is displayed  \fI^-^ \fR to read any command, the command line argument is invoked and is treated as the first argument.
+
+.SH DEFINITIONS
+The following definitions are used throughout the rest of this document.
+
+- \fIblank\fR
+
+A sequence of characters considered as a single unit by the shell. Also known as a token\fR.
+
+- \fIname\fR
+
+A word consisting only of alphanumeric characters and underscores, and beginning with an alphabetic character or an underscore. Also referred to as an identifier\fR.
+
+control operator\fR
+A token that performs a control function. It is one of the following symbols:
+|| & && ; ;;
+
+.SH Command Execution
+After a command has been split into words, if it results in a simple command and an optional list of arguments, the following actions are taken.
+
+If the command name contains no slashes, the shell attempts to locate it. If there exists a shell function by that name, that function is invoked. If the name does not match a function, the shell searches for it in the list of shell builtins. If a match is found, that builtin is invoked.
+
+If the name is neither a shell function nor a builtin, and contains no slashes, \hsg\fR searches each element of the \fIPATH\fR for a directory c exit status becomes the exit status of the shell. Ie and returns an exit status of 127.
+
+If the search is successful, or if the command name contains one or more slashes, the shell executes the named program in a separate execution environment. Argument 0 is set to the name given, ats given, if any.
+
